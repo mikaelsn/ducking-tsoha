@@ -1,5 +1,9 @@
 Xrciser::Application.routes.draw do
-  resources :exercises
+  
+
+  resources :exercises do
+    resources :activities
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

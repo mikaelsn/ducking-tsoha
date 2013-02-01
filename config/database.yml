@@ -45,7 +45,7 @@ test:
   database: Xrciser_test
   pool: 5
   username: mikaelsn
-  password: morjens
+  password: 
 
 production:
   adapter: postgresql
@@ -53,4 +53,4 @@ production:
   database: Xrciser_production
   pool: 5
   username: mikaelsn
-  password: morjens
+  password: 
