@@ -10,6 +10,25 @@
   <%= @exercise.feel %>
 </p>
 
+<table class ="table">
+	<tr>
+		<th>Name</th>
+		<th>Amount</th>
+	</tr>
+
+	<% @exercise.activities.each do |activity| %>
+		<tr>
+			<td><%= link_to activity.name, edit_exercise_activity_path(@exercise, activity) %></td>
+			<td><%= activity.description %></td>
+		</tr>
+	<% end %>
+</table>
+
+<p>
+	<%= link_to "New Activity", new_exercise_activity_path(@exercise) %>
+</p>
+
+
 
 <%= link_to 'Edit', edit_exercise_path(@exercise) %> |
 <%= link_to 'Back', exercises_path %>
