@@ -1,6 +1,8 @@
 Xrciser::Application.routes.draw do
   
 
+  devise_for :users
+
   resources :exercises do
     resources :activities
   end
