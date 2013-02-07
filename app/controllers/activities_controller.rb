@@ -60,8 +60,8 @@ class ActivitiesController < ApplicationController
   # PUT /activities/1
   # PUT /activities/1.json
   def update
-    @exercise = Exercise.find(params[:exercise_id])
     @activity = Activity.find(params[:id])
+    @exercise = @activity.exercise
 
     respond_to do |format|
       if @activity.update_attributes(params[:activity])
