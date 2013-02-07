@@ -16,9 +16,13 @@
     <%= f.date_select :time %>
   </div>
   <div class="field">
-    <%= f.label :feel %><br />
+    <p>Comment</p><br />
     <%= f.text_field :feel %>
   </div>
+  <div class="field">
+    <p>Overall feeling (for color)</p><br />
+    <%= f.select(:color, options_for_select([['Good!', 'success'], ['Neutral', 'warning'], ['Bad', 'error']])) %>
+  </div>  
   <div class="actions">
     <%= f.submit %>
   </div>

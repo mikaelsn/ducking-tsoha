@@ -2,19 +2,19 @@
   <h2>Nothing here yet! :(</h2>
   <h4 class="text-info">Maybe you should add a <%= link_to 'new exercise', new_exercise_path %></h4>
 <% else %>
-<h1>Listing exercises</h1>
+<h1>Listing your hard work</h1>
 
 <table class="table">
   <tr>
     <th>Time</th>
-    <th>Feel</th>
+    <th>Comment</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @exercises.each do |exercise| %>
-    <tr class="success">
+    <tr class=<%= exercise.color %>>
       <td><%= exercise.time %></td>
       <td><%= exercise.feel %></td>
       <td><%= link_to 'Show', exercise %></td>
@@ -24,6 +24,7 @@
   <% end %>
 
 </table>
+<h5><%= link_to 'New Exercise', new_exercise_path %></h5>
 <% end %>
 <br />
 
