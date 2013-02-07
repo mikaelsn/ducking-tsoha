@@ -1,4 +1,7 @@
 class ActivitiesController < ApplicationController
+
+  before_filter :authenticate_user!
+
   # GET /activities
   # GET /activities.json
   def index
@@ -86,4 +89,5 @@ class ActivitiesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

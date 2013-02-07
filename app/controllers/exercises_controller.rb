@@ -1,4 +1,8 @@
 class ExercisesController < ApplicationController
+
+  before_filter :authenticate_user!
+  before_filter :owns_exercise, only: [:edit, :update, :destroy]
+
   # GET /exercises
   # GET /exercises.json
   def index
@@ -42,6 +46,7 @@ class ExercisesController < ApplicationController
   # POST /exercises.json
   def create
     @exercise = Exercise.new(params[:exercise])
+    @exercise.user = current_user
 
     respond_to do |format|
       if @exercise.save
@@ -81,4 +86,13 @@ class ExercisesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def owns_exercise
+    if !user_signed_in? || current_user != Exercise.find(params[:id]).user
+      redirect_to exercise_path, error: "You cannot do that!"
+    end
+  end
+
 end
