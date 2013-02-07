@@ -6,7 +6,7 @@ class ExercisesController < ApplicationController
   # GET /exercises
   # GET /exercises.json
   def index
-    @exercises = Exercise.all
+    @exercises = current_user.exercises
 
     respond_to do |format|
       format.html # index.html.erb
@@ -29,7 +29,7 @@ class ExercisesController < ApplicationController
   # GET /exercises/new
   # GET /exercises/new.json
   def new
-    @exercise = Exercise.new
+    @exercise = current_user.exercises.build
 
     respond_to do |format|
       format.html # new.html.erb
