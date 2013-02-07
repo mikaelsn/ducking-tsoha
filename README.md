@@ -4,7 +4,7 @@ Xrciser
 Tietokantasovellus harjoituspäiväkirjan pitämiseen
 ---------------------
 
-Käytet tekniikat:
+Käytetyttyjä tekniikoita
 - Ruby on Rails
 - Twitter Bootstrap
 - Font Awesome
