@@ -9,7 +9,10 @@
   <b>Feel:</b>
   <%= @exercise.feel %>
 </p>
-
+<% if @exercise.activities.size < 1 %>
+  <h2>No activities yet!</h2>
+  <h4 class="text-info">Maybe you should add a <%= link_to "new activity", new_exercise_activity_path(@exercise) %></h4>
+<% else %>
 <table class ="table">
 	<tr>
 		<th>Name</th>
@@ -23,10 +26,9 @@
 		</tr>
 	<% end %>
 </table>
+<%= link_to "New Activity", new_exercise_activity_path(@exercise) %><br />
+<% end %>
 
-<p>
-	<%= link_to "New Activity", new_exercise_activity_path(@exercise) %>
-</p>
 
 
 
