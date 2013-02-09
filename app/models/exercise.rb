@@ -1,7 +1,7 @@
 class Exercise < ActiveRecord::Base
   attr_accessible :feel, :time, :color
 
-  validates_presence_of :feel
+  validates_presence_of :feel, :time
   
   has_many :activities
 

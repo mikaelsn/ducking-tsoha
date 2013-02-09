@@ -1,12 +1,13 @@
 <% if @exercises.size < 1 %>
   <h2>Nothing here yet! :(</h2>
-  <h4 class="text-info">Maybe you should add a <%= link_to 'new exercise', new_exercise_path %></h4>
+  <h4 class="text-info">Maybe you should add a</h4>
+  <span><%= button_to('New Exercise', new_exercise_path, {:method => 'get', :class => 'btn btn-primary'}) %></span>
 <% else %>
 <h1>Listing your hard work</h1>
 
 <table class="table">
   <tr>
-    <th>Time</th>
+    <th>Date</th>
     <th>Comment</th>
     <th></th>
     <th></th>
@@ -15,16 +16,16 @@
 
 <% @exercises.each do |exercise| %>
     <tr class=<%= exercise.color %>>
-      <td><%= exercise.time %></td>
+      <td><%= exercise.time.to_formatted_s(:long)  %></td>
       <td><%= exercise.feel %></td>
-      <td><%= link_to 'Show', exercise %></td>
-      <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
-      <td><%= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Show', exercise, :class => 'btn btn-mini btn-success' %></td>
+      <td><%= link_to 'Edit', edit_exercise_path(exercise), :class => 'btn btn-mini' %></td>
+      <td><%= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %></td>
     </tr>
   <% end %>
 
 </table>
-<h5><%= link_to 'New Exercise', new_exercise_path %></h5>
+<%= button_to('New Exercise', new_exercise_path, {:method => 'get', :class => 'btn btn-primary'}) %>
 <% end %>
-<br />
+
 

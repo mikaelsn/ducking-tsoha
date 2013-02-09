@@ -2,7 +2,6 @@
   <% if @exercise.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
-
       <ul>
       <% @exercise.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -12,16 +11,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :time %><br />
-    <%= f.date_select :time %>
+    <p>Date</p><br />
+    <%= f.text_field :time %>
+    <span class="text-info"><small>Click for calendar</small></span>
   </div>
   <div class="field">
     <p>Comment</p><br />
     <%= f.text_field :feel %>
+    <span class="text-info"><small>Details etc.</small></span>
   </div>
   <div class="field">
-    <p>Overall feeling (for color)</p><br />
+    <p>Overall feeling</p><br />
     <%= f.select(:color, options_for_select([['Good!', 'success'], ['Neutral', 'warning'], ['Bad', 'error']])) %>
+    <span class="text-info"><small>Colorizes the entry</small></span>
   </div>  
   <div class="actions">
     <button type="submit" class="btn btn-primary">Create Exercise</button>
