@@ -11,9 +11,9 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.ui.datepicker
 //= require twitter/bootstrap
-//= require jquery.turbolinks
 //= require turbolinks
 //= require_tree .
