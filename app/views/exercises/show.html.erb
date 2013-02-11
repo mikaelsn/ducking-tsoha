@@ -25,7 +25,7 @@
 			<td><%= activity.name %></td>
 			<td><%= activity.description %></td>
 			<td><%= link_to 'Edit', edit_exercise_activity_path(@exercise, activity), :class => 'btn btn-mini' %></td>
-      <td><%= link_to 'Destroy', exercise_activity_path(@exercise, activity), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger data-no-turbolink' %></td>
+      <td><%= link_to 'Destroy', exercise_activity_path(@exercise, activity), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger', 'data-no-turbolink' => true %></td>
 		</tr>
 	<% end %>
 </table>

@@ -3,5 +3,5 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-	$('#exercise_time').datepicker({ dateFormat: 'yy-mm-dd'}).initialized = false
+	$('#exercise_time').datepicker({ dateFormat: 'yy-mm-dd'})
 
