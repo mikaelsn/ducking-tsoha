@@ -20,7 +20,7 @@
       <td><%= exercise.feel %></td>
       <td><%= link_to 'Show', exercise, :class => 'btn btn-mini btn-success' %></td>
       <td><%= link_to 'Edit', edit_exercise_path(exercise), :class => 'btn btn-mini' %></td>
-      <td><%= link_to 'Destroy', exercise, method: :delete, data: { :no_turbolink => 'true', confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger', 'data-no-turbolink' => true %></td>
+      <td><%= link_to 'Destroy', exercise, method: :delete, data: { :no_turbolink => 'true', confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %></td>
     </tr>
   <% end %>
 
