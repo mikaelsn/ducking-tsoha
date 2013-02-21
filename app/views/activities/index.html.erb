@@ -1,6 +1,6 @@
 <h1>Listing activities</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Name</th>
     <th>Description</th>
@@ -14,8 +14,6 @@
     <td><%= activity.name %></td>
     <td><%= activity.description %></td>
     <td><%= link_to 'Show', activity %></td>
-    <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-    <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
