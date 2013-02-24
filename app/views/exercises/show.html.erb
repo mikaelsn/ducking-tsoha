@@ -23,7 +23,7 @@
 	<% @exercise.activities.each do |activity| %>
 		<tr>
 			<td><%= activity.name %></td>
-			<td><%= activity.description %></td>
+			<td><%=activity.sets%>X<%=activity.reps%>	<%= activity.weight %>kg </td>
 			<td><%= link_to 'Edit', edit_exercise_activity_path(@exercise, activity), :class => 'btn btn-mini' %></td>
       <td><%= link_to 'Destroy', exercise_activity_path(@exercise, activity), method: :delete, :class => 'btn btn-mini btn-danger'%></td>
 		</tr>

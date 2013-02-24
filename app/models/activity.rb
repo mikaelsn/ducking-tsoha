@@ -4,5 +4,6 @@ class Activity < ActiveRecord::Base
   validates :weight, :numericality => true
   validates :sets, :numericality => { :only_integer => true }
   validates :reps, :numericality => { :only_integer => true }
-  belongs_to :exercise
+  belongs_to :exercises
+  belongs_to :user
 end

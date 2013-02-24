@@ -3,7 +3,7 @@ class Exercise < ActiveRecord::Base
 
   validates_presence_of :feel, :time
   
-  has_many :activities
+  has_many :activities, dependent: :destroy
 
   belongs_to :user
 end

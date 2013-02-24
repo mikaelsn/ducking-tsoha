@@ -1,7 +1,7 @@
 class ExercisesController < ApplicationController
 
   before_filter :authenticate_user!
-  before_filter :owns_exercise, only: [:edit, :update, :destroy]
+  before_filter :owns_exercise, only: [:edit, :update, :destroy, :show]
 
   # GET /exercises
   # GET /exercises.json
@@ -91,7 +91,7 @@ class ExercisesController < ApplicationController
 
   def owns_exercise
     if !user_signed_in? || current_user != Exercise.find(params[:id]).user
-      redirect_to exercise_path, error: "You cannot do that!"
+      redirect_to exercises_path, notice: "That is not yours!"
     end
   end
 

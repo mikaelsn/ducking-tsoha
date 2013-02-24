@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
 
   before_filter :authenticate_user!
+  before_filter :owns_activity, only: [:edit, :update, :destroy, :show]
 
   # GET /activities
   # GET /activities.json
@@ -16,7 +17,7 @@ class ActivitiesController < ApplicationController
   # GET /activities/1
   # GET /activities/1.json
   def show
-    @exercise = Exercise.find(params[:exercise_id])
+   # @exercise = Exercise.find(params[:exercise_id])
     @activity = Activity.find(params[:id])
 
     respond_to do |format|
@@ -29,7 +30,7 @@ class ActivitiesController < ApplicationController
   # GET /activities/new.json
   def new
     @exercise = Exercise.find(params[:exercise_id])
-    @activity = Activity.new
+    @activity = current_user.activities.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -48,6 +49,7 @@ class ActivitiesController < ApplicationController
   def create
     @exercise = Exercise.find(params[:exercise_id])
     @activity = @exercise.activities.new(params[:activity])
+    @activity.user = current_user
 
     respond_to do |format|
       if @activity.save
@@ -64,7 +66,7 @@ class ActivitiesController < ApplicationController
   # PUT /activities/1.json
   def update
     @activity = Activity.find(params[:id])
-    @exercise = @activity.exercise
+    @exercise = Exercise.find(params[:exercise_id])
 
     respond_to do |format|
       if @activity.update_attributes(params[:activity])
@@ -89,5 +91,13 @@ class ActivitiesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def owns_activity
+    if !user_signed_in? || current_user != Activity.find(params[:id]).user
+      redirect_to exercise_path, notice: "You cannot do that!"
+    end
+  end  
 
 end
