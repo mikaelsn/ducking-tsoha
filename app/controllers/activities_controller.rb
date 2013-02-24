@@ -6,7 +6,7 @@ class ActivitiesController < ApplicationController
   # GET /activities
   # GET /activities.json
   def index
-    @activities = current_user.activities
+    @activities = current_user.activities.select("DISTINCT ON (name) activities.*")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,8 +17,7 @@ class ActivitiesController < ApplicationController
   # GET /activities/1
   # GET /activities/1.json
   def show
-   # @exercise = Exercise.find(params[:exercise_id])
-    @activity = Activity.find(params[:id])
+    @activity = current_user.activities.where("name = ?", Activity.find(params[:id]).name)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -50,6 +49,7 @@ class ActivitiesController < ApplicationController
     @exercise = Exercise.find(params[:exercise_id])
     @activity = @exercise.activities.new(params[:activity])
     @activity.user = current_user
+    @activity.time = @exercise.time
 
     respond_to do |format|
       if @activity.save
