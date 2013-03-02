@@ -4,4 +4,4 @@
 
 <%= content_tag :div, "", id: "graph", data: {activity: @activity} %>
 
-<%= link_to 'Back', activities_path %>
+<%= button_to('Back', activities_path, {:method => 'get', :class => 'btn btn-small'}) %> 

@@ -4,7 +4,7 @@
 
 $ ->
 	$('#exercise_time').datepicker({ dateFormat: 'yy-mm-dd'})
-	
+
 	Morris.Line
 		element: 'graph'
 		data: $('#graph').data('activity')

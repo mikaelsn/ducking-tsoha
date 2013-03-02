@@ -1,5 +1,5 @@
-<h1>Editing activity</h1>
+<h1>Editing <%= @activity.name %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', @exercise %>
+<%= button_to('Back', @exercise, {:method => 'get', :class => 'btn btn-small'}) %>

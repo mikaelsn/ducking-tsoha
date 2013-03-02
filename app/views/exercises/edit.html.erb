@@ -2,5 +2,4 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @exercise %> |
-<%= link_to 'Back', exercises_path %>
+<%= button_to('Back', exercises_path, {:method => 'get', :class => 'btn btn-small'}) %> 

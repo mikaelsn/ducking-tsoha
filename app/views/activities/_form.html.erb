@@ -17,22 +17,21 @@
     <span class="text-info"><small>Jogging, deadlift, </small></span>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
     <%= f.label :weight %><br />
     <%= f.text_field :weight %>
+    <span class="text-info"><small>Must be a number (kg)</small></span>
   </div>
   <div class="field">
     <%= f.label :reps %><br />
     <%= f.text_field :reps %>
+    <span class="text-info"><small>Number of repetitions</small></span>
   </div>
   <div class="field">
     <%= f.label :sets %><br />
     <%= f.text_field :sets %>
+    <span class="text-info"><small>Number of sets</small></span>
   </div>      
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions">   
+    <%= submit_tag 'Submit', :class => 'btn btn-primary' %>
   </div>
 <% end %>
