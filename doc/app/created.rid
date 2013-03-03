@@ -1,0 +1,11 @@
+Sun, 03 Mar 2013 21:32:10 +0200
+doc/README_FOR_APP	Fri, 01 Feb 2013 14:31:12 +0200
+app/controllers/activities_controller.rb	Sun, 24 Feb 2013 20:48:01 +0200
+app/controllers/application_controller.rb	Fri, 01 Feb 2013 14:31:12 +0200
+app/controllers/exercises_controller.rb	Sun, 24 Feb 2013 12:10:54 +0200
+app/helpers/activities_helper.rb	Fri, 01 Feb 2013 14:55:44 +0200
+app/helpers/application_helper.rb	Fri, 01 Feb 2013 14:31:12 +0200
+app/helpers/exercises_helper.rb	Fri, 01 Feb 2013 14:37:13 +0200
+app/models/activity.rb	Sun, 03 Mar 2013 20:03:20 +0200
+app/models/exercise.rb	Sun, 03 Mar 2013 20:54:07 +0200
+app/models/user.rb	Sun, 24 Feb 2013 17:15:44 +0200
