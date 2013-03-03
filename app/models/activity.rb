@@ -1,6 +1,6 @@
 class Activity < ActiveRecord::Base
 
-  attr_accessible :description, :name, :weight, :sets, :reps, :time
+  attr_accessible :name, :weight, :sets, :reps, :time
 
   validates_presence_of :name
   validates :weight, :numericality => true
