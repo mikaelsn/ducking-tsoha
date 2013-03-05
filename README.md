@@ -11,7 +11,7 @@ Käytetyttyjä tekniikoita
 * jQuery
 
 ## Dokumentaatio
-Alustava dokumentaatio: https://github.com/mikaelsn/ducking-tsoha/blob/master/xrciser.pdf
+Alustava dokumentaatio: https://github.com/mikaelsn/ducking-tsoha/blob/master/xrciser.pdf?raw=true
 
 # Lisenssi
 MIT-lisenssi
