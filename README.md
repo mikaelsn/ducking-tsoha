@@ -1,17 +1,24 @@
-Xrciser
-==============
+#Xrciser
+
 
 Tietokantasovellus harjoituspäiväkirjan pitämiseen
 ---------------------
 
-Käytetyttyjä tekniikoita
+Sovellus on käynnissä osoitteessa http://xrciser.herokuapp.com
+
+### Käytetyttyjä tekniikoita
 * Ruby on Rails
 * Twitter Bootstrap
 * Morris.js
 * jQuery
 
-## Dokumentaatio
-Alustava dokumentaatio: https://github.com/mikaelsn/ducking-tsoha/blob/master/xrciser.pdf?raw=true
+### Dokumentaatio
+Alustava dokumentaatio [tästä](https://github.com/mikaelsn/ducking-tsoha/blob/master/xrciser.pdf?raw=true)
 
-# Lisenssi
+## Testaaminen
+Yleiset testaustunnukset
+* guest@testing.com
+* testi123
+
+### Lisenssi
 MIT-lisenssi
